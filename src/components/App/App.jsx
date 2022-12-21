@@ -8,9 +8,9 @@ import { useState, useEffect } from 'react';
 
 export default function App() {
   const [contacts, setContacts] = useState(() => {
-    const savedContacts = JSON.parse(localStorage.getItem('contacts'));
+    const savedContacts = localStorage.getItem('contacts');
     if (savedContacts !== null) {
-      return savedContacts;
+      return JSON.parse(savedContacts);
     }
     return [
       { id: '1', name: 'Rosie Simpson', number: '4591256' },
